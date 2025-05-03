@@ -6,12 +6,13 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import androidx.navigation.NavController
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.pdmtaller2.d00042423_DayalinHernandez.ui.components.BottomBar
 import com.pdmtaller2.d00042423_DayalinHernandez.ui.components.FoodSpotTopBar
@@ -25,8 +26,7 @@ fun search(navController: NavHostController){
         Scaffold(
             topBar = { FoodSpotTopBar() },
             bottomBar = { BottomBar(navController) }
-
-        ){ paddingValues ->
+        ) { paddingValues ->
             Surface(
                 modifier = Modifier
                     .fillMaxSize()
@@ -37,9 +37,16 @@ fun search(navController: NavHostController){
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(32.dp),
-                    verticalArrangement = Arrangement.Top,
+                    verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
+                    Text(
+                        text = "no hay busquedas",
+                        fontSize = 20.sp,
+                        color = Color.Gray
+                    )
                 }
-            }}}
+            }
+        }
+    }
 }
